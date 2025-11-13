@@ -13,8 +13,6 @@ MKDIR_P = mkdir -p
 OUT_DIR = ../bin
 
 QMECHA_EXE = $(OUT_DIR)/QMeCha
-BSSPRJ_EXE = $(OUT_DIR)/bssprj 
-WVFCNV_EXE = $(OUT_DIR)/wvfcnv
 
 # List of directories
 -include directories
@@ -30,16 +28,9 @@ builddirs:
 
 qmecha: builddirs version QMeCha.o $(QMECHA_FLS) 
 	$(FC) $(FCFLAGS) QMeCha.o $(QMECHA_FLS) $(LDFLAGS) -o $(QMECHA_EXE) 
-	
-bssprj: builddirs bssprj.o $(BSSPRJ_FLS)
-	$(FC) $(FCFLAGS) bssprj.o $(BSSPRJ_FLS) $(LDFLAGS) -o $(BSSPRJ_EXE)
-
-wvfcnv: builddirs wvfcnv.o $(WVFCNV_FLS)
-	$(FC) $(FCFLAGS) wvfcnv.o $(WVFCNV_FLS) $(LDFLAGS) -o $(WVFCNV_EXE)
 
 version: 
-	sed "s/LLLVERSIONLLL/$(GIT_VERSION)/g" $(UTILS_DIR)/qmecha_version.tmp > $(UTILS_DIR)/qmecha_version.f90
-	sed -i "s/LLLDATELLL/$(DATE)/g" $(UTILS_DIR)/qmecha_version.f90
+	sed "s/LLLDATELLL/$(DATE)/g" $(UTILS_DIR)/qmecha_version.tmp > $(UTILS_DIR)/qmecha_version.f90
 
 -include dependencies
 

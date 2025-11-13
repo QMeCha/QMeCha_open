@@ -96,7 +96,7 @@ contains
       n_crs_step = 0_int32
       n_avg_step = 1_int32
       eps        = 0.001_dp
-      eps_force_reg = v
+      eps_force_reg = 0.001_dp
       eps_auto_tune   = .false.
       err_fct = 4.0_dp
       norm_cut   = 0.1_dp
