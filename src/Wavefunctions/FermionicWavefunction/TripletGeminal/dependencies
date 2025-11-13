@@ -1,0 +1,8 @@
+
+triplet_geminal_params_m.o : fortran_kinds_v.o fermionic_wavefunction_v.o molecular_system_m.o fermionic_orbitals_m.o geminal_symmetries_m.o \
+            quantum_monte_carlo_v.o
+
+triplet_geminal_c.o : fortran_kinds_v.o orbmat_cls.o fermionic_orbitals_m.o fermionic_wavefunction_v.o triplet_geminal_params_m.o \
+               triplet_geminal_operats_m.o molecular_system_m.o s_hh_trn_pff_inv.o
+ 
+triplet_geminal_operats_m.o : fortran_kinds_v.o molecular_system_m.o fermionic_orbitals_m.o triplet_geminal_params_m.o

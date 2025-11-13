@@ -1,0 +1,11 @@
+io_fermionic_basisset_m.o : fortran_kinds_v.o openmp_mpi_m.o atomic_orbital_c.o fermionic_wavefunction_v.o basisset_v.o \
+		molecular_system_v.o cubic_harmonics_m.o primorbs_operations_m.o cusps_functions_params_m.o
+
+io_drudonic_basisset_m.o : fortran_kinds_v.o openmp_mpi_m.o basisset_v.o qdo_system_v.o  \
+		atomic_orbital_c.o primorbs_operations_m.o qdo_wavefunction_v.o jstqepar_var.o qdo_jastrow_m.o
+
+basisset_s.o: fortran_kinds_v.o molecular_system_m.o fermionic_orbitals_m.o jastrow_orbitals_m.o primorbs_operations_m.o \
+		atomic_properties_s.o qdo_system_v.o feporb_mod.o drudonic_orbitals_m.o qdo_wavefunction_v.o jeporb_mod.o
+
+basisset_v.o : fortran_kinds_v.o atomic_orbital_c.o
+

@@ -1,0 +1,10 @@
+physical_constants_v.o : fortran_kinds_v.o
+write_lines_m.o : fortran_kinds_v.o
+openmp_mpi_m.o : fortran_kinds_v.o write_lines_m.o
+f_is_numeric.o : fortran_kinds_v.o
+merge_sort_m.o : fortran_kinds_v.o
+qmecha_version.o : fortran_kinds_v.o openmp_mpi_m.o write_lines_m.o
+mersenne_twister19937_m.o : fortran_kinds_v.o physical_constants_v.o openmp_mpi_m.o write_lines_m.o
+timings_m.o : fortran_kinds_v.o openmp_mpi_m.o
+numerical_functions_f.o : fortran_kinds_v.o
+decomposition_primes_s.o : fortran_kinds_v.o

@@ -1,0 +1,12 @@
+# Compile  
+FC=ftn
+# Optimization flags
+export CRAYPE_LINK_TYPE=dynamic
+FCFLAGS= -O3 -fpp -ip -free -m64 -auto 
+FCFLAGS+=-qopenmp -D_OMP
+FCFLAGS+=-D_MPI
+# MKL libraries
+FCFLAGS+=-I${MKLROOT}/include/intel64/lp64 -I${MKLROOT}/include
+LDFLAGS = -L${MKLROOT}/lib/intel64 -lmkl_cdft_core -lmkl_intel_lp64 -lmkl_intel_thread \
+    -lmkl_core -liomp5 -lpthread -lm -ldl  -lmkl_scalapack_lp64  -lmkl_blacs_intelmpi_lp64
+

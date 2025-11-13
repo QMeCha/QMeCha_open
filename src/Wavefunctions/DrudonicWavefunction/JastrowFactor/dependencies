@@ -1,0 +1,16 @@
+qdo_jastrow_m.o : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o qdo_system_v.o \
+            drudonic_config_c.o cusps_functions_params_m.o jastrow_factors_v.o cusp_functions_m.o
+
+jstqepar_var.o  : fortran_kinds_v.o 
+
+jstqe_mod.o     : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o jstqepar_var.o jstqe_cls.o \
+                  qdo_system_v.o
+
+jstqe_cls.o     : fortran_kinds_v.o jstqepar_var.o qedip_cls.o qedip_mod.o \
+                  molecular_system_v.o qdo_system_v.o  quantum_monte_carlo_v.o
+
+qedip_mod.o     : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o  jstqepar_var.o \
+                  qdo_system_v.o
+                
+qedip_cls.o     : fortran_kinds_v.o qedip_mod.o \
+                  qdo_system_v.o molecular_system_v.o qdo_system_m.o molecular_system_m.o jstqepar_var.o

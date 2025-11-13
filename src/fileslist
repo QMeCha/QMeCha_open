@@ -1,0 +1,55 @@
+CHRPRP_FLS = electronic_properties_m.o
+DATAIO_FLS = io_arguments_m.o io_chgoptpar_m.o io_datasheet_m.o namelist_handlers_f.o
+LINALG_FLS = s_hh_trn_pff_inv.o s_lu_lin_solv.o s_sm_upd_inv.o \
+        f_lu_dec_det.o s_cg_lin_solv.o s_lu_dec_det_inv.o s_sm_ss_upd_inv.o \
+        s_norm_mat.o
+LOCENE_FLS = embedding_potential_m.o external_field_m.o fermionic_potentials_m.o local_energy_m.o qdo_potentials_m.o \
+        kinetic_energy_m.o
+MOLSYS_FLS = fermionic_config_c.o atomic_properties_s.o space_mapping_s.o molecular_system_m.o molecular_system_v.o \
+        fermionic_positions_m.o
+QDOSYS_FLS = drudonic_config_c.o qdo_system_m.o qdo_system_v.o
+PSEUDO_FLS = nl_pseudo_grid_m.o pseudopotentials_m.o pseudopotentials_v.o
+RNDNMB_FLS = mersenne_twister19937_m.o
+SYMMTR_FLS = molec_symmetry_m.o
+QMCRUN_FLS = quantum_monte_carlo_m.o quantum_monte_carlo_v.o regularization_f.o \
+        monte_carlo_checkpointfiles_m.o
+VMCRUN_FLS = variational_monte_carlo_m.o vmc_sampling_m.o
+DMCRUN_FLS = branching_m.o diffusion_monte_carlo_s.o diffusion_monte_carlo_v.o diffusion_monte_carlo_m.o dmc_samplings_m.o
+SMPLNG_FLS = acceptance_rate_m.o correlated_sampling_m.o drudonic_sampling_m.o fermionic_sampling_m.o langevin_dynamics_s.o 
+OPTRUN_FLS = wavefunction_optimization_v.o wavefunction_optimization_m.o optimization_averages_m.o
+UTILS_FLS = physical_constants_v.o f_is_numeric.o fortran_kinds_v.o merge_sort_m.o openmp_mpi_m.o \
+        qmecha_version.o write_lines_m.o timings_m.o numerical_functions_f.o decomposition_primes_s.o
+BSSSET_FLS = basisset_v.o io_fermionic_basisset_m.o io_drudonic_basisset_m.o basisset_s.o 
+CUBHRM_FLS = cubic_harmonics_m.o  
+FRMQVF_FLS = fermionic_wavefunction_c.o fermionic_wavefunction_v.o fermionic_wavefunction_m.o geminal_symmetries_m.o io_symmetry_tables_m.o
+QDOQVF_FLS = qdo_wavefunction_c.o qdo_wavefunction_m.o qdo_wavefunction_v.o qdo_jastrow_m.o
+ATMORB_FLS = atomic_orbital_c.o  fermionic_orbitals_m.o orbbss_cls.o  primorbs_operations_m.o \
+        jastrow_orbitals_m.o orbmat_cls.o
+EPOORB_FLS = eporbbss_cls.o eporbmat_cls.o feporb_mod.o jeporb_mod.o
+JSTFCT_FLS = fermions_fermions_cusps_m.o cusps_functions_params_m.o jastrow_factor_params_m.o fermionic_nuclei_atomic_factors_m.o \
+        electrons_positrons_cusps_m.o fermions_nuclei_cusps_m.o jastrow_factors_m.o fermions_fermions_atomic_factors_m.o \
+        jastrow_factors_v.o orbitalsbased_jastrow_factors_m.o cusps_factors_m.o  \
+        orbitalsbased_jastrow_factors_params_m.o cusp_functions_m.o 
+FRMDET_FLS = singlet_geminal_params_m.o singlet_geminal_c.o singlet_geminal_operats_m.o slater_determinant_params_m.o slater_determinant_c.o slater_determinant_operats_m.o \
+        pfaffian_params_m.o pfaffian_c.o pfaffian_operats_m.o triplet_geminal_params_m.o triplet_geminal_c.o triplet_geminal_operats_m.o 
+EPODET_FLS = eppfun_cls.o eppcfs_mod.o
+DRDORB_FLS = drudonic_orbitals_m.o orbbssq_cls.o orbspq_cls.o orbmaq_cls.o 
+DRDDET_FLS = dipqcfs_mod.o dipqfun_cls.o prdqcfs_mod.o prdqfun_cls.o
+EMBJST_FLS = jstqe_cls.o jstqe_mod.o jstqepar_var.o qedip_cls.o qedip_mod.o
+
+TOOLS_FLS = monte_carlo_averages_m.o monte_carlo_averages_v.o
+
+QMECHA_FLS = $(CHRPRP_FLS) $(DATAIO_FLS) $(LINALG_FLS) $(LOCENE_FLS) $(MOLSYS_FLS) \
+        $(QDOSYS_FLS) $(PSEUDO_FLS) $(RNDNMB_FLS) $(SYMMTR_FLS) $(ATMORB_FLS) \
+        $(UTILS_FLS) $(DRDDET_FLS) $(EMBJST_FLS) $(CUBHRM_FLS) \
+        $(BSSSET_FLS) $(FRMQVF_FLS) $(EPOORB_FLS) $(JSTFCT_FLS) $(FRMDET_FLS) \
+        $(EPODET_FLS) $(QDOQVF_FLS) $(DRDORB_FLS) $(SMPLNG_FLS) $(TOOLS_FLS) \
+        $(VMCRUN_FLS) $(DMCRUN_FLS) $(QMCRUN_FLS) $(OPTRUN_FLS) 
+
+
+EVLQMC_FLS = $(QMECHA_FLS)
+
+BSSPRJ_FLS = $(QMECHA_FLS) argpio_mod.o datpio_mod.o intgrd_mod.o optorb_mod.o \
+        rscorb_mod.o trgtgo_mod.o nl2sol.o 
+
+WVFCNV_FLS = $(QMECHA_FLS) wvfcnv_mod.o

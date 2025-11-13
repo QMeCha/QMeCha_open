@@ -1,0 +1,6 @@
+
+dipqcfs_mod.o : fortran_kinds_v.o qdo_wavefunction_v.o openmp_mpi_m.o qdo_system_m.o \
+                qdo_wavefunction_v.o
+
+dipqfun_cls.o : fortran_kinds_v.o openmp_mpi_m.o qdo_wavefunction_v.o dipqcfs_mod.o \
+                quantum_monte_carlo_v.o 

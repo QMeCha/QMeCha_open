@@ -1,0 +1,9 @@
+# Compiler
+FC = mpif90
+# Compiling flags
+FCFLAGS =-O3 -cpp -ffree-form -ffast-math -ftree-vectorize -funroll-loops -fallow-argument-mismatch -ffree-line-length-none 
+FCFLAGS+=-fopenmp -D_OMP
+FCFLAGS+=-D_MPI08
+# OBLAS libraries
+FCFLAGS+=-I${EBROOTOPENBLAS}/include
+LDFLAGS = ${EBROOTOPENBLAS}/lib/libopenblas.a -lm -ldl

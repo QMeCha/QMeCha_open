@@ -1,0 +1,7 @@
+
+pfaffian_params_m.o : fortran_kinds_v.o fermionic_wavefunction_v.o molecular_system_m.o fermionic_orbitals_m.o geminal_symmetries_m.o
+
+pfaffian_c.o : fortran_kinds_v.o orbmat_cls.o fermionic_orbitals_m.o fermionic_wavefunction_v.o pfaffian_params_m.o \
+               pfaffian_operats_m.o molecular_system_m.o
+ 
+pfaffian_operats_m.o : fortran_kinds_v.o molecular_system_m.o fermionic_orbitals_m.o fermionic_wavefunction_v.o pfaffian_params_m.o

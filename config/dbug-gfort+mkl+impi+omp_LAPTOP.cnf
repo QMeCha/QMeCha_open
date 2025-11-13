@@ -1,0 +1,15 @@
+# Compiler
+FC = mpif90
+# Debugginig flags 
+FDEBUG = -g3 -fbounds-check -fallow-argument-mismatch -Wall -Wextra -fimplicit-none \
+    -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=invalid,zero,overflow,underflow -finit-real=nan
+FCFLAGS = ${FDEBUG} -cpp -ffree-form -ffast-math -ftree-vectorize -funroll-loops -ffree-line-length-none 
+FCFLAGS+=-fopenmp -D_OMP    
+# MPI with gfortran and IntelMPI (MPIh) 
+FCFLAGS+=-D_MPIh
+# MKL libraries 
+FCFLAGS+=-I${MKLROOT}/include/intel64/lp64 -m64 -I${MKLROOT}/include
+LDFLAGS = ${MKLROOT}/lib/intel64/libmkl_blas95_lp64.a \
+    ${MKLROOT}/lib/intel64/libmkl_lapack95_lp64.a \
+    -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -Wl,--no-as-needed \
+    -lmkl_gf_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -ldl

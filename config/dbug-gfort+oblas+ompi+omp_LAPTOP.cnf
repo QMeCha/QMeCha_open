@@ -1,0 +1,13 @@
+# Compiler
+#export LD_LIBRARY_PATH=$HOME/Software/OpenMPI-5.0.6/lib:$LD_LIBRARY_PATH
+#export PATH=$HOME/Software/OpenMPI-5.0.6/bin:$PATH
+FC = mpif90
+# Debugginig flags 
+FDEBUG = -g3 -fbounds-check -fallow-argument-mismatch -Wall -Wextra -fimplicit-none \
+    -fbacktrace -ffree-line-length-0 -fcheck=all -ffpe-trap=invalid,zero,overflow,underflow -finit-real=nan
+FCFLAGS = ${FDEBUG} -cpp -ffree-form -ffast-math -ftree-vectorize -funroll-loops -ffree-line-length-none 
+FCFLAGS+=-fopenmp -D_OMP     
+FCFLAGS+=-D_MPI08
+# OBLAS libraries
+FCFLAGS+=-I/home/matteo/Software/OpenMPI-5.0.6/include
+LDFLAGS = /home/matteo/Software/OpenBLAS-0.3.29/libopenblas.a -lm -ldl

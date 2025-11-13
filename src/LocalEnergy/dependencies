@@ -1,0 +1,14 @@
+external_field_m.o : fortran_kinds_v.o molecular_system_v.o qdo_system_v.o fermionic_config_c.o drudonic_config_c.o
+
+fermionic_potentials_m.o : fortran_kinds_v.o molecular_system_v.o fermionic_config_c.o
+
+qdo_potentials_m.o : fortran_kinds_v.o qdo_system_v.o drudonic_config_c.o physical_constants_v.o qdo_jastrow_m.o
+
+embedding_potential_m.o : fortran_kinds_v.o molecular_system_v.o qdo_system_v.o fermionic_config_c.o drudonic_config_c.o \
+              pseudopotentials_m.o pseudopotentials_v.o
+
+kinetic_energy_m.o : fortran_kinds_v.o molecular_system_v.o qdo_system_v.o qdo_wavefunction_m.o fermionic_wavefunction_m.o
+
+local_energy_m.o : fortran_kinds_v.o fermionic_potentials_m.o qdo_potentials_m.o embedding_potential_m.o external_field_m.o \
+              molecular_system_v.o qdo_system_v.o pseudopotentials_m.o pseudopotentials_v.o kinetic_energy_m.o \
+              qdo_wavefunction_m.o fermionic_wavefunction_m.o wavefunction_optimization_v.o

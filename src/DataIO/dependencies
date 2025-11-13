@@ -1,0 +1,13 @@
+
+io_datasheet_m.o : fortran_kinds_v.o openmp_mpi_m.o wavefunction_optimization_v.o jastrow_factors_v.o fermionic_wavefunction_v.o quantum_monte_carlo_v.o \
+            jastrow_orbitals_m.o fermionic_orbitals_m.o molecular_system_v.o io_fermionic_basisset_m.o io_drudonic_basisset_m.o electronic_properties_m.o \
+            qdo_system_v.o quantum_monte_carlo_v.o diffusion_monte_carlo_v.o pseudopotentials_v.o drudonic_orbitals_m.o qdo_wavefunction_v.o \
+            mersenne_twister19937_m.o molec_symmetry_m.o jstqepar_var.o feporb_mod.o jeporb_mod.o \
+            monte_carlo_averages_m.o write_lines_m.o orbitalsbased_jastrow_factors_params_m.o
+
+io_arguments_m.o : fortran_kinds_v.o openmp_mpi_m.o io_datasheet_m.o pseudopotentials_v.o io_fermionic_basisset_m.o qdo_system_v.o \
+            molecular_system_v.o io_drudonic_basisset_m.o quantum_monte_carlo_v.o wavefunction_optimization_v.o jastrow_factors_v.o write_lines_m.o
+
+io_chgoptpar_m.o : fortran_kinds_v.o openmp_mpi_m.o wavefunction_optimization_v.o quantum_monte_carlo_v.o
+
+namelist_handlers_f.o : fortran_kinds_v.o openmp_mpi_m.o write_lines_m.o

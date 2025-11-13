@@ -1,0 +1,16 @@
+cusps_functions_params_m.o : fortran_kinds_v.o openmp_mpi_m.o
+
+dtn1bc_mod.o : fortran_kinds_v.o
+
+dtn2bc_mod.o : fortran_kinds_v.o
+
+fermions_fermions_cusps_m.o : fortran_kinds_v.o cusps_functions_params_m.o molecular_system_v.o cusp_functions_m.o 
+
+fermions_nuclei_cusps_m.o : fortran_kinds_v.o cusps_functions_params_m.o molecular_system_v.o cusp_functions_m.o
+
+electrons_positrons_cusps_m.o : fortran_kinds_v.o cusps_functions_params_m.o molecular_system_v.o cusp_functions_m.o
+
+cusp_functions_m.o : fortran_kinds_v.o cusps_functions_params_m.o molecular_system_v.o
+
+cusps_factors_m.o : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o molecular_system_v.o fermionic_config_c.o jastrow_factors_v.o \
+	fermions_nuclei_cusps_m.o fermions_fermions_cusps_m.o electrons_positrons_cusps_m.o

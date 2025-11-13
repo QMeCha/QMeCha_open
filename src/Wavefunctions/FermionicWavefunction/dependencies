@@ -1,0 +1,14 @@
+fermionic_wavefunction_v.o : fortran_kinds_v.o
+
+geminal_symmetries_m.o : fortran_kinds_v.o molecular_system_v.o molecular_system_m.o   \
+               
+
+fermionic_wavefunction_c.o  : fortran_kinds_v.o molecular_system_m.o fermionic_wavefunction_v.o fermionic_config_c.o jastrow_factor_params_m.o \
+	            jastrow_factors_m.o slater_determinant_c.o singlet_geminal_c.o triplet_geminal_c.o pfaffian_c.o \
+				eppfun_cls.o 
+
+fermionic_wavefunction_m.o  : fortran_kinds_v.o openmp_mpi_m.o fermionic_wavefunction_c.o feporb_mod.o\
+                jastrow_factors_v.o fermionic_wavefunction_v.o jastrow_factor_params_m.o  fermionic_orbitals_m.o \
+	            jastrow_orbitals_m.o slater_determinant_params_m.o singlet_geminal_params_m.o pfaffian_params_m.o triplet_geminal_params_m.o \
+			    eppcfs_mod.o basisset_s.o \
+				wavefunction_optimization_v.o jeporb_mod.o 

@@ -1,0 +1,14 @@
+# Compiler 
+FC = mpiifort 
+# flags 
+FCFLAGS= -O0 -g -traceback -debug all -check bounds -fpp -ip -free -fpe0 -ftrapuv -m64 -auto 
+FCFLAGS+=-qopenmp -D_OMP
+FCFLAGS+=-D_MPI08
+# MKL libraries 
+FCFLAGS+=-I${MKLROOT}/include/intel64/lp64 -I${MKLROOT}/include 
+LDFLAGS = ${MKLROOT}/lib/intel64/libmkl_blas95_lp64.a \
+    ${MKLROOT}/lib/intel64/libmkl_lapack95_lp64.a -Wl,--start-group \
+    ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a \
+    ${MKLROOT}/lib/intel64/libmkl_sequential.a \
+    ${MKLROOT}/lib/intel64/libmkl_core.a -Wl,--end-group -lpthread -lm -ldl
+

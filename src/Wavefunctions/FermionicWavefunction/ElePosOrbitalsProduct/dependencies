@@ -1,0 +1,4 @@
+eppfun_cls.o : fortran_kinds_v.o eppcfs_mod.o eporbmat_cls.o molecular_system_m.o fermionic_config_c.o \
+	           feporb_mod.o 
+
+eppcfs_mod.o : fortran_kinds_v.o fermionic_wavefunction_v.o molecular_system_m.o feporb_mod.o

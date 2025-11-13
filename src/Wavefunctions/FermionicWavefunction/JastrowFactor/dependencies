@@ -1,0 +1,12 @@
+jastrow_factors_v.o : fortran_kinds_v.o 
+
+jastrow_factor_params_m.o : fortran_kinds_v.o openmp_mpi_m.o \
+   write_lines_m.o fermionic_wavefunction_v.o molecular_system_v.o fermions_nuclei_cusps_m.o \
+   jastrow_factors_v.o fermionic_nuclei_atomic_factors_m.o fermions_fermions_atomic_factors_m.o \
+   cusps_functions_params_m.o jastrow_orbitals_m.o jeporb_mod.o \
+   fermions_fermions_cusps_m.o electrons_positrons_cusps_m.o \
+   orbitalsbased_jastrow_factors_params_m.o 
+
+jastrow_factors_m.o : fortran_kinds_v.o jastrow_factors_v.o molecular_system_v.o fermionic_config_c.o \
+   orbitalsbased_jastrow_factors_m.o cusps_factors_m.o jastrow_factor_params_m.o 
+

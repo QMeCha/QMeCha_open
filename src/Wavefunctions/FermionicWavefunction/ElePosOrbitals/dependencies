@@ -1,0 +1,12 @@
+
+feporb_mod.o : fortran_kinds_v.o fermionic_wavefunction_v.o eporbbss_cls.o eporbmat_cls.o fermionic_orbitals_m.o \
+         quantum_monte_carlo_v.o io_fermionic_basisset_m.o write_lines_m.o
+
+jeporb_mod.o : fortran_kinds_v.o jastrow_factors_v.o eporbbss_cls.o eporbmat_cls.o  \
+        quantum_monte_carlo_v.o io_fermionic_basisset_m.o write_lines_m.o 
+
+eporbbss_cls.o : fortran_kinds_v.o molecular_system_m.o orbbss_cls.o io_fermionic_basisset_m.o
+
+eporbmat_cls.o : fortran_kinds_v.o molecular_system_v.o molecular_system_m.o cubic_harmonics_m.o atomic_orbital_c.o \
+              eporbbss_cls.o quantum_monte_carlo_v.o
+

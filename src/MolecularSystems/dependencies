@@ -1,0 +1,14 @@
+
+molecular_system_v.o : fortran_kinds_v.o
+
+molecular_system_m.o : fortran_kinds_v.o openmp_mpi_m.o molecular_system_v.o fermionic_config_c.o mersenne_twister19937_m.o \
+            molec_symmetry_m.o atomic_properties_s.o quantum_monte_carlo_v.o physical_constants_v.o external_field_m.o \
+            fermionic_positions_m.o merge_sort_m.o write_lines_m.o namelist_handlers_f.o
+
+fermionic_config_c.o : fortran_kinds_v.o mersenne_twister19937_m.o molecular_system_v.o space_mapping_s.o fermionic_positions_m.o 
+
+space_mapping_s.o : fortran_kinds_v.o molecular_system_v.o
+
+atomic_properties_s.o : fortran_kinds_v.o molecular_system_v.o f_is_numeric.o
+
+fermionic_positions_m.o : fortran_kinds_v.o openmp_mpi_m.o molecular_system_v.o

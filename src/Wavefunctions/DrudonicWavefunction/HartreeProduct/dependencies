@@ -1,0 +1,5 @@
+
+prdqcfs_mod.o : fortran_kinds_v.o qdo_wavefunction_v.o qdo_wavefunction_v.o drudonic_orbitals_m.o
+
+prdqfun_cls.o : fortran_kinds_v.o orbmaq_cls.o qdo_wavefunction_v.o prdqcfs_mod.o \
+                drudonic_orbitals_m.o quantum_monte_carlo_v.o fermionic_orbitals_m.o orbmaq_cls.o 

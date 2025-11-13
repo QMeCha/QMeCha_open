@@ -1,0 +1,2 @@
+
+molec_symmetry_m.o : fortran_kinds_v.o

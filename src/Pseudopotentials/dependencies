@@ -1,0 +1,8 @@
+
+pseudopotentials_v.o : fortran_kinds_v.o molecular_system_v.o f_is_numeric.o nl_pseudo_grid_m.o quantum_monte_carlo_v.o
+
+nl_pseudo_grid_m.o : fortran_kinds_v.o openmp_mpi_m.o physical_constants_v.o quantum_monte_carlo_v.o molecular_system_m.o molecular_system_v.o \
+               wavefunction_optimization_v.o
+
+pseudopotentials_m.o : fortran_kinds_v.o openmp_mpi_m.o pseudopotentials_v.o molecular_system_m.o molecular_system_v.o nl_pseudo_grid_m.o \
+               fermionic_wavefunction_m.o qdo_system_m.o qdo_system_v.o qdo_wavefunction_m.o

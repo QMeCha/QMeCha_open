@@ -1,0 +1,18 @@
+
+s_lu_dec_det_inv.o : fortran_kinds_v.o
+
+s_lu_lin_solv.o : fortran_kinds_v.o
+
+s_sm_upd_inv.o : fortran_kinds_v.o
+
+f_lu_dec_det.o : fortran_kinds_v.o
+
+f_lu_dec_inv.o : fortran_kinds_v.o
+
+s_hh_trn_pff_inv.o : fortran_kinds_v.o
+
+s_sm_ss_upd_inv.o : fortran_kinds_v.o
+
+s_cg_lin_solv.o : fortran_kinds_v.o openmp_mpi_m.o timings_m.o 
+
+s_norm_mat.o : fortran_kinds_v.o

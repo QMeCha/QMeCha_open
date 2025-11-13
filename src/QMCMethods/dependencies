@@ -1,0 +1,68 @@
+diffusion_monte_carlo_v.o : fortran_kinds_v.o openmp_mpi_m.o write_lines_m.o
+
+diffusion_monte_carlo_m.o : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o fermionic_wavefunction_m.o local_energy_m.o \
+			diffusion_monte_carlo_s.o mersenne_twister19937_m.o branching_m.o diffusion_monte_carlo_v.o monte_carlo_averages_m.o \
+			electronic_properties_m.o variational_monte_carlo_m.o dmc_samplings_m.o vmc_sampling_m.o timings_m.o \
+			monte_carlo_checkpointfiles_m.o
+
+diffusion_monte_carlo_s.o : fortran_kinds_v.o openmp_mpi_m.o langevin_dynamics_s.o quantum_monte_carlo_v.o fermionic_wavefunction_m.o \
+			diffusion_monte_carlo_v.o molecular_system_v.o local_energy_m.o qdo_wavefunction_m.o drudonic_config_c.o fermionic_config_c.o \
+			qdo_system_v.o qdo_system_m.o electronic_properties_m.o jstqe_mod.o timings_m.o regularization_f.o write_lines_m.o numerical_functions_f.o
+
+vmc_sampling_m.o : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o molecular_system_m.o mersenne_twister19937_m.o \
+			   fermionic_wavefunction_m.o physical_constants_v.o acceptance_rate_m.o fermionic_sampling_m.o drudonic_sampling_m.o \
+			   local_energy_m.o 
+
+variational_monte_carlo_m.o : fortran_kinds_v.o quantum_monte_carlo_v.o openmp_mpi_m.o timings_m.o molecular_system_m.o \
+               vmc_sampling_m.o fermionic_wavefunction_m.o local_energy_m.o monte_carlo_averages_m.o qdo_system_m.o \
+			   monte_carlo_checkpointfiles_m.o
+
+branching_m.o : fortran_kinds_v.o openmp_mpi_m.o mersenne_twister19937_m.o molecular_system_v.o \
+			quantum_monte_carlo_v.o diffusion_monte_carlo_v.o diffusion_monte_carlo_s.o qdo_system_v.o qdo_system_m.o
+
+dmc_samplings_m.o : fortran_kinds_v.o openmp_mpi_m.o molecular_system_v.o qdo_system_v.o fermionic_wavefunction_m.o \
+			qdo_wavefunction_m.o fermionic_config_c.o drudonic_config_c.o diffusion_monte_carlo_v.o vmc_sampling_m.o \
+			local_energy_m.o electronic_properties_m.o drudonic_sampling_m.o quantum_monte_carlo_v.o kinetic_energy_m.o
+
+wavefunction_optimization_v.o : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o 
+
+wavefunction_optimization_m.o : fortran_kinds_v.o openmp_mpi_m.o timings_m.o fermionic_wavefunction_m.o molecular_system_m.o \
+	        vmc_sampling_m.o fermionic_orbitals_m.o jastrow_orbitals_m.o jastrow_factors_v.o fermionic_wavefunction_v.o \
+	        quantum_monte_carlo_v.o s_lu_lin_solv.o io_chgoptpar_m.o feporb_mod.o write_lines_m.o \
+			correlated_sampling_m.o optimization_averages_m.o variational_monte_carlo_m.o s_cg_lin_solv.o drudonic_orbitals_m.o \
+			qdo_wavefunction_v.o 
+ 
+optimization_averages_m.o : fortran_kinds_v.o openmp_mpi_m.o molecular_system_m.o quantum_monte_carlo_v.o wavefunction_optimization_v.o \
+			correlated_sampling_m.o merge_sort_m.o local_energy_m.o timings_m.o regularization_f.o fermionic_wavefunction_v.o \
+			qdo_wavefunction_v.o
+
+correlated_sampling_m.o : fortran_kinds_v.o openmp_mpi_m.o molecular_system_v.o fermionic_wavefunction_m.o \
+            fermionic_config_c.o drudonic_config_c.o qdo_wavefunction_m.o qdo_system_v.o
+
+acceptance_rate_m.o : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o qdo_system_v.o molecular_system_v.o 
+
+langevin_dynamics_s.o : fortran_kinds_v.o molecular_system_v.o physical_constants_v.o fermionic_positions_m.o \
+			mersenne_twister19937_m.o qdo_system_v.o 
+
+drudonic_sampling_m.o : fortran_kinds_v.o openmp_mpi_m.o qdo_system_v.o drudonic_config_c.o qdo_wavefunction_m.o 
+
+fermionic_sampling_m.o : fortran_kinds_v.o openmp_mpi_m.o qdo_system_v.o drudonic_config_c.o molecular_system_v.o \
+            fermionic_config_c.o qdo_wavefunction_m.o fermionic_wavefunction_m.o langevin_dynamics_s.o physical_constants_v.o
+
+quantum_monte_carlo_v.o : fortran_kinds_v.o openmp_mpi_m.o write_lines_m.o
+
+quantum_monte_carlo_m.o : fortran_kinds_v.o openmp_mpi_m.o quantum_monte_carlo_v.o acceptance_rate_m.o vmc_sampling_m.o \
+			drudonic_sampling_m.o wavefunction_optimization_v.o variational_monte_carlo_m.o diffusion_monte_carlo_m.o  \
+			molecular_system_v.o qdo_system_v.o wavefunction_optimization_m.o
+
+monte_carlo_averages_v.o : fortran_kinds_v.o
+
+monte_carlo_averages_m.o : fortran_kinds_v.o physical_constants_v.o monte_carlo_averages_v.o electronic_properties_m.o molecular_system_m.o \
+               molec_symmetry_m.o diffusion_monte_carlo_v.o quantum_monte_carlo_v.o local_energy_m.o timings_m.o langevin_dynamics_s.o \
+			   decomposition_primes_s.o write_lines_m.o
+
+regularization_f.o : fortran_kinds_v.o
+
+monte_carlo_checkpointfiles_m.o : fortran_kinds_v.o openmp_mpi_m.o write_lines_m.o molecular_system_v.o molecular_system_m.o \
+				qdo_system_m.o  qdo_system_v.o monte_carlo_averages_m.o quantum_monte_carlo_v.o mersenne_twister19937_m.o \
+				monte_carlo_averages_m.o diffusion_monte_carlo_v.o

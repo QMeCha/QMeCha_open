@@ -1,0 +1,43 @@
+QMeCha.o : openmp_mpi_m.o io_datasheet_m.o mersenne_twister19937_m.o molecular_system_m.o timings_m.o \
+    io_fermionic_basisset_m.o molec_symmetry_m.o fermionic_wavefunction_m.o local_energy_m.o quantum_monte_carlo_m.o \
+    io_arguments_m.o electronic_properties_m.o pseudopotentials_v.o io_drudonic_basisset_m.o qdo_system_m.o \
+    qdo_wavefunction_m.o  qmecha_version.o
+
+-include ./MolecularSystems/dependencies
+-include ./QDOSystems/dependencies
+-include ./DataIO/dependencies
+-include ./LocalEnergy/dependencies
+-include ./SystemUtils/dependencies
+-include ./LinearAlgebra/dependencies
+-include ./Symmetries/dependencies
+-include ./FermionicProperties/dependencies
+-include ./Pseudopotentials/dependencies
+-include ./QMCMethods/dependencies
+
+-include ./Wavefunctions/CubicHarmonics/dependencies
+-include ./Wavefunctions/BasisSetsIO/dependencies
+-include ./Wavefunctions/UtilsWavefunction/dependencies
+-include ./Wavefunctions/FermionicWavefunction/dependencies
+-include ./Wavefunctions/FermionicWavefunction/AtomicOrbitals/dependencies
+-include ./Wavefunctions/FermionicWavefunction/ElePosOrbitals/dependencies
+-include ./Wavefunctions/FermionicWavefunction/ElePosOrbitalsProduct/dependencies
+-include ./Wavefunctions/FermionicWavefunction/SlaterDeterminant/dependencies
+-include ./Wavefunctions/FermionicWavefunction/SingletGeminal/dependencies
+-include ./Wavefunctions/FermionicWavefunction/TripletGeminal/dependencies
+-include ./Wavefunctions/FermionicWavefunction/Pfaffian/dependencies
+-include ./Wavefunctions/FermionicWavefunction/JastrowFactor/dependencies
+-include ./Wavefunctions/FermionicWavefunction/JastrowFactor/AtomicFactors/dependencies
+-include ./Wavefunctions/FermionicWavefunction/JastrowFactor/CuspFunctions/dependencies
+-include ./Wavefunctions/DrudonicWavefunction/dependencies
+-include ./Wavefunctions/DrudonicWavefunction/QDOOrbitals/dependencies
+-include ./Wavefunctions/DrudonicWavefunction/DipoleWavefunction/dependencies
+-include ./Wavefunctions/DrudonicWavefunction/HartreeProduct/dependencies
+-include ./Wavefunctions/DrudonicWavefunction/JastrowFactor/dependencies
+
+-include ./AdditionalTools/evlqmc/dependencies
+-include ./AdditionalTools/wvfcnv/dependencies
+-include ./AdditionalTools/bssprj/dependencies
+
+
+
+

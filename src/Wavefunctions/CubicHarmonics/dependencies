@@ -1,0 +1,2 @@
+
+cubic_harmonics_m.o : fortran_kinds_v.o  molecular_system_v.o physical_constants_v.o quantum_monte_carlo_v.o 

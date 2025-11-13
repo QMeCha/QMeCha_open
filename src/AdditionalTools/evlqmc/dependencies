@@ -1,0 +1,3 @@
+
+evlqmc.o : fortran_kinds_v.o openmp_mpi_m.o monte_carlo_averages_v.o monte_carlo_averages_m.o molecular_system_m.o molecular_system_v.o \
+               mersenne_twister19937_m.o molec_symmetry_m.o

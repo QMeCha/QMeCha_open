@@ -1,0 +1,1 @@
+electronic_properties_m.o : fortran_kinds_v.o molecular_system_v.o quantum_monte_carlo_v.o fermionic_config_c.o

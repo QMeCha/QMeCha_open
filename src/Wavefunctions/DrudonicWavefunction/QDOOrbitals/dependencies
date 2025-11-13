@@ -1,0 +1,10 @@
+orbmaq_cls.o : fortran_kinds_v.o cubic_harmonics_m.o orbspq_cls.o molecular_system_v.o orbmat_cls.o \
+                  qdo_system_v.o orbbssq_cls.o qdo_system_m.o  quantum_monte_carlo_v.o    
+
+orbspq_cls.o: fortran_kinds_v.o atomic_orbital_c.o qdo_system_m.o io_drudonic_basisset_m.o 
+
+orbbssq_cls.o: fortran_kinds_v.o qdo_system_m.o orbspq_cls.o io_drudonic_basisset_m.o
+
+drudonic_orbitals_m.o : fortran_kinds_v.o orbbssq_cls.o orbmaq_cls.o orbspq_cls.o io_drudonic_basisset_m.o \
+                openmp_mpi_m.o qdo_wavefunction_v.o quantum_monte_carlo_v.o
+

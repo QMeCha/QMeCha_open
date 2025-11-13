@@ -1,0 +1,3 @@
+geminal_symmetries_m.o : fortran_kinds_v.o molecular_system_v.o molecular_system_m.o orbbss_cls.o  
+
+io_symmetry_tables_m.o : fortran_kinds_v.o geminal_symmetries_m.o

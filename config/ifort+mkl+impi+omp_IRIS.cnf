@@ -1,0 +1,12 @@
+# Compiler  
+FC = mpiifort
+# Optimization flags
+FCFLAGS= -Ofast -fpp -free -m64 -auto -align array64byte -fma -ftz -fomit-frame-pointer 
+FCFLAGS+=-qopenmp -D_OMP
+FCFLAGS+=-D_MPI08 
+# MKL libraries
+FCFLAGS+=-I${MKLROOT}/include/intel64/lp64 -I${MKLROOT}/include
+LDFLAGS= ${MKLROOT}/lib/intel64/libmkl_blas95_lp64.a -Wl,--start-group \
+    ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a \
+    ${MKLROOT}/lib/intel64/libmkl_sequential.a \
+    ${MKLROOT}/lib/intel64/libmkl_core.a -Wl,--end-group -lpthread -lm -ldl 

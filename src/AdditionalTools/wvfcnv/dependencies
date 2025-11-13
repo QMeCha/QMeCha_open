@@ -1,0 +1,8 @@
+wvfcnv_mod.o : fortran_kinds_v.o openmp_mpi_m.o molecular_system_v.o io_fermionic_basisset_m.o quantum_monte_carlo_v.o \
+              slater_determinant_params_m.o fermionic_orbitals_m.o fermionic_wavefunction_v.o
+
+wvfcnv.o     : fortran_kinds_v.o openmp_mpi_m.o molecular_system_v.o io_fermionic_basisset_m.o wvfcnv_mod.o \
+              molecular_system_m.o mersenne_twister19937_m.o molec_symmetry_m.o fermionic_wavefunction_m.o  \
+              io_datasheet_m.o
+              
+

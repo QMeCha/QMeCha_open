@@ -1,0 +1,29 @@
+DIRS = ./DataIO ./LinearAlgebra ./MolecularSystems ./QDOSystems \
+    ./Symmetries ./LocalEnergy ./FermionicProperties ./Pseudopotentials 
+UTILS_DIR = ./SystemUtils
+TOOLS_DIR = ./AdditionalTools ./AdditionalTools/evlqmc ./AdditionalTools/bssprj ./AdditionalTools/wvfcnv
+
+WVFNS_DIR = ./Wavefunctions ./Wavefunctions/BasisSetsIO ./Wavefunctions/CubicHarmonics ./Wavefunctions/UtilsWavefunction
+
+FRMWF_DIR = ./Wavefunctions/FermionicWavefunction \
+	./Wavefunctions/FermionicWavefunction/AtomicOrbitals \
+	./Wavefunctions/FermionicWavefunction/ElePosOrbitals \
+	./Wavefunctions/FermionicWavefunction/SingletGeminal \
+	./Wavefunctions/FermionicWavefunction/TripletGeminal \
+	./Wavefunctions/FermionicWavefunction/Pfaffian \
+	./Wavefunctions/FermionicWavefunction/SlaterDeterminant \
+	./Wavefunctions/FermionicWavefunction/ElePosOrbitalsProduct
+	   
+JSTFC_DIR = ./Wavefunctions/FermionicWavefunction/JastrowFactor \
+	./Wavefunctions/FermionicWavefunction/JastrowFactor/CuspFunctions \
+	./Wavefunctions/FermionicWavefunction/JastrowFactor/AtomicFactors 
+
+QDOWF_DIR = ./Wavefunctions/DrudonicWavefunction \
+	./Wavefunctions/DrudonicWavefunction/QDOOrbitals \
+	./Wavefunctions/DrudonicWavefunction/JastrowFactor \
+	./Wavefunctions/DrudonicWavefunction/HartreeProduct \
+	./Wavefunctions/DrudonicWavefunction/DipoleWavefunction    
+
+QMCRN_DIR = ./QMCMethods
+
+VPATH=$(WVFNS_DIR) $(QMCRN_DIR) $(QDOWF_DIR) $(FRMWF_DIR) $(JSTFC_DIR) $(TOOLS_DIR) $(UTILS_DIR) $(DIRS) 

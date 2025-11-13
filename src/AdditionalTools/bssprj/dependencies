@@ -1,0 +1,21 @@
+bssprj.o : fortran_kinds_v.o openmp_mpi_m.o argpio_mod.o io_fermionic_basisset_m.o  \
+              datpio_mod.o trgtgo_mod.o mersenne_twister19937_m.o molecular_system_m.o molec_symmetry_m.o \
+              optorb_mod.o quantum_monte_carlo_v.o jastrow_factors_v.o
+
+datpio_mod.o : fortran_kinds_v.o openmp_mpi_m.o molecular_system_v.o intgrd_mod.o 
+
+intgrd_mod.o : fortran_kinds_v.o molecular_system_m.o
+
+argpio_mod.o : fortran_kinds_v.o openmp_mpi_m.o datpio_mod.o
+
+trgtgo_mod.o : fortran_kinds_v.o molecular_system_m.o orbmat_cls.o orbbss_cls.o  \
+               io_fermionic_basisset_m.o atomic_orbital_c.o  intgrd_mod.o rscorb_mod.o \
+               jastrow_factors_v.o fermions_nuclei_cusps_m.o
+
+optorb_mod.o : fortran_kinds_v.o molecular_system_m.o orbmat_cls.o orbbss_cls.o  \
+               io_fermionic_basisset_m.o atomic_orbital_c.o  intgrd_mod.o trgtgo_mod.o \
+               atomic_properties_s.o nl2sol.o jastrow_factors_v.o
+
+rscorb_mod.o : fortran_kinds_v.o atomic_orbital_c.o primorbs_operations_m.o
+
+nl2sol.o :

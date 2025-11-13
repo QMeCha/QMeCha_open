@@ -1,0 +1,12 @@
+
+qdo_wavefunction_v.o : fortran_kinds_v.o 
+
+qdo_wavefunction_m.o  : fortran_kinds_v.o qdo_wavefunction_v.o openmp_mpi_m.o \
+             basisset_s.o \
+            qdo_wavefunction_c.o prdqcfs_mod.o drudonic_orbitals_m.o qdo_system_v.o dipqcfs_mod.o \
+            molecular_system_v.o jstqepar_var.o jstqe_mod.o fermionic_wavefunction_m.o fermionic_wavefunction_v.o \
+            wavefunction_optimization_v.o qdo_jastrow_m.o
+            
+qdo_wavefunction_c.o : fortran_kinds_v.o qdo_wavefunction_v.o prdqcfs_mod.o qdo_system_m.o drudonic_orbitals_m.o \
+            prdqfun_cls.o quantum_monte_carlo_v.o qdo_system_v.o dipqfun_cls.o dipqcfs_mod.o \
+            molecular_system_v.o jstqe_mod.o fermionic_wavefunction_m.o fermionic_wavefunction_v.o qdo_jastrow_m.o

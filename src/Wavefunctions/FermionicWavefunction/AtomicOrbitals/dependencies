@@ -1,0 +1,17 @@
+atomic_orbital_c.o : fortran_kinds_v.o cubic_harmonics_m.o molecular_system_v.o primorbs_operations_m.o 
+
+primorbs_operations_m.o : fortran_kinds_v.o physical_constants_v.o
+
+orbmat_cls.o : fortran_kinds_v.o molecular_system_v.o molecular_system_m.o cubic_harmonics_m.o atomic_orbital_c.o \
+            orbbss_cls.o quantum_monte_carlo_v.o
+
+orbbss_cls.o : fortran_kinds_v.o molecular_system_m.o io_fermionic_basisset_m.o atomic_orbital_c.o molec_symmetry_m.o \
+            merge_sort_m.o
+
+fermionic_orbitals_m.o : fortran_kinds_v.o molecular_system_v.o io_fermionic_basisset_m.o \
+            orbmat_cls.o fermionic_wavefunction_v.o quantum_monte_carlo_v.o orbbss_cls.o basisset_v.o
+
+jastrow_orbitals_m.o : fortran_kinds_v.o molecular_system_v.o io_fermionic_basisset_m.o \
+            orbmat_cls.o jastrow_factors_v.o quantum_monte_carlo_v.o orbbss_cls.o basisset_v.o
+
+
