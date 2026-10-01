@@ -29,13 +29,17 @@ Kafanas, Georgios : Compilation, portability and optimization
 
 **QMeCha: quantum Monte Carlo package for fermions in embedding environments**\
 Matteo Barborini, Jorge Charry, Matej Ditte, Andronikos Leventis, Georgios Kafanas, Alexandre Tkatchenko\
-[*arXiv* (2025)](https://doi.org/10.48550/arXiv.2511.03439)
+[*J. Chem. Phys.* **164**, 062501 (2026)](https://doi.org/10.1063/5.0311994)
 
 ### Related publications 
 
+**Two protons, two positrons, and four electrons: Covalent bond with van der Waals characteristics**\
+Jorge Charry and Alexandre Tkatchenko\
+[*Science Advances* **12**, 40 (2026)](10.1126/sciadv.aej0387)
+
 **Watch out electrons!: Positron Binding Redefines Chemical Bonding in Be$_2$**\
 Rafael Porras Roldan, Jorge Charry, Felix Moncada, Roberto Flores-Moreno, Marcio Teixeira Varella and Andrés Reyes\
-[*Chem. Sci.* Accepted Manuscript (2025)](https://doi.org/10.1039/D5SC05711F)
+[*Chem. Sci.* **16**, 22322-22332 (2025)](https://doi.org/10.1039/D5SC05711F)
 
 **Extending quantum-mechanical benchmark accuracy to biological ligand-pocket interactions**\
 Mirela Puleva, Leonardo Medrano Sandonas, Balázs D. Lőrincz, Jorge Charry, David M. Rogers, Péter R. Nagy and Alexandre Tkatchenko\
